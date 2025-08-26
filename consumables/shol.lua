@@ -23,7 +23,6 @@ SMODS.Consumable {
                   func = function()
                       play_sound('timpani')
                       SMODS.add_card({ set = 'Joker', rarity = 'sholatro_the_pro' })
-                          G.GAME.joker_buffer = 0
                       end
                       used_card:juice_up(0.3, 0.5)
                       return true
