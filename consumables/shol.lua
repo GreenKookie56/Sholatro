@@ -22,11 +22,7 @@ SMODS.Consumable {
                   delay = 0.4,
                   func = function()
                       play_sound('timpani')
-                      if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-                          G.GAME.joker_buffer = G.GAME.joker_buffer + 1
-                      local new_joker = SMODS.add_card({ set = 'Joker', rarity = 'sholatro_the_pro' })
-                      if new_joker then
-                      end
+                      SMODS.add_card({ set = 'Joker', rarity = 'sholatro_the_pro' })
                           G.GAME.joker_buffer = 0
                       end
                       used_card:juice_up(0.3, 0.5)
