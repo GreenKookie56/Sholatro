@@ -2,7 +2,7 @@ SMODS.Joker{ --Overclock
     key = "overclock",
     config = {
         extra = {
-            currentmoney = 0,
+            money÷1 = 1,
             ignore = 0
         }
     },
@@ -33,6 +33,9 @@ SMODS.Joker{ --Overclock
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
+    loc_vars = function(self, info_queue, card)
+        return {vars = {card.ability.extra.ignore, card.ability.extra.money÷1 + ((math.floor(lenient_bignum(G.GAME.dollars)) or 0))}}
+    end,
 
     calculate = function(self, card, context)
         if context.reroll_shop  then
@@ -60,7 +63,7 @@ SMODS.Joker{ --Overclock
         end
         if context.cardarea == G.jokers and context.joker_main and lenient_bignum(G.GAME.dollars) <= 1 then
                 return {
-                    e_mult = lenient_bignum(G.GAME.dollars)
+                    e_mult = card.ability.extra.money÷1 + (math.floor(lenient_bignum(G.GAME.dollars)))
                 }
         end
     end
