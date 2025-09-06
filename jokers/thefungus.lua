@@ -78,7 +78,7 @@ SMODS.Joker{ --The Fungus
           else
             return {
                 hyperchips = {
-                  math.floor(to_big(card.ability.extra)),
+                  math.floor(leninent_bignum(card.ability.extra)),
                   5
                 }
              }
