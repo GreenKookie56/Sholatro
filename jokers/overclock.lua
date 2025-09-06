@@ -61,7 +61,7 @@ SMODS.Joker{ --Overclock
         end
                 }
         end
-        if context.cardarea == G.jokers and context.joker_main and lenient_bignum(G.GAME.dollars) <= 1 then
+        if context.cardarea == G.jokers and context.joker_main and lenient_bignum(G.GAME.dollars) >= 1 then
                 return {
                     e_mult = card.ability.extra.money÷1 + (math.floor(lenient_bignum(G.GAME.dollars)))
                 }
