@@ -13,7 +13,7 @@ SMODS.Joker{ --v18 strategies
             [1] = '{X:legendary,C:white}^#2#{} Mult every {C:attention}reroll{}',
             [2] = 'Create a {C:attention}Ground Zero{}',
             [3] = 'when {C:attention}blind{} is selected',
-            [4] = '{C:inactive}(Currently {}{X:legendary,C:white}X#1#{} {C:inactive}Mult){}'
+            [4] = '{C:inactive}(Currently {}{X:legendary,C:white}^#1#{} {C:inactive}Mult){}'
         },
         ['unlock'] = {
             [1] = ''
