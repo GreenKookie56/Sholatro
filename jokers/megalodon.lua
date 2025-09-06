@@ -2,13 +2,13 @@ SMODS.Joker{ --Megalodon (v46-48)
     key = "megalodon",
     config = {
         extra = {
-            mult = 700
+            mult = 7
         }
     },
     loc_txt = {
         ['name'] = 'Megalodon (v46-48)',
         ['text'] = {
-            [1] = 'All {C:attention}played cards{} give {C:red}+#1#{} Mult when {C:attention}scored{}',
+            [1] = 'All {C:attention}played cards{} give {X:legendary,C:white}^#1#{} Mult when {C:attention}scored{}',
             [2] = 'and are {C:red}destroyed{} afterwards',
             [3] = '{C:inactive}Art by 1.2m^2 Fungus Room{}'
         },
@@ -45,7 +45,7 @@ SMODS.Joker{ --Megalodon (v46-48)
             context.other_card.should_destroy = false
                 context.other_card.should_destroy = true
                 return {
-                    mult = card.ability.extra.mult,
+                    e_mult = card.ability.extra.mult,
                     extra = {
                         message = "Thrash!",
                         colour = G.C.RED

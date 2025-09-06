@@ -42,9 +42,9 @@ SMODS.Joker{ --Flagship plane
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
             if context.other_card:is_suit("Clubs") then
-                if SMODS.pseudorandom_probability(card, 'group_0_9b599a9c', 1, card.ability.extra.odds, 'j_sholatro_flagshipplane') then
-                      SMODS.calculate_effect({x_chips = card.ability.extra.chip}, card)
-                  end
+                if SMODS.pseudorandom_probability(card, 'group_0_9b599a9c', 1, card.ability.extra.odds, 'j_sholatro_flagshipplane', false) then
+              SMODS.calculate_effect({x_chips = card.ability.extra.chip}, card)
+          end
             end
         end
     end

@@ -22,7 +22,9 @@ SMODS.Consumable {
                   delay = 0.4,
                   func = function()
                       play_sound('timpani')
-                      SMODS.add_card({ set = 'Joker', rarity = 'sholatro_the_pro' })
+                      local new_joker = SMODS.add_card({ set = 'Joker', rarity = 'sholatro_the_pro' })
+                      if new_joker then
+                      end
                       used_card:juice_up(0.3, 0.5)
                       return true
                   end

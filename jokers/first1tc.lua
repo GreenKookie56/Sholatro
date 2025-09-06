@@ -8,7 +8,7 @@ SMODS.Joker{ --First 1tc (v25)
     loc_txt = {
         ['name'] = 'First 1tc (v25)',
         ['text'] = {
-            [1] = '{X:red,C:white}X#1#{} Mult',
+            [1] = '{X:legendary,C:white}^#1#{} Mult',
             [2] = 'if no other {C:attention}Jokers{} are present'
         },
         ['unlock'] = {
@@ -40,7 +40,7 @@ SMODS.Joker{ --First 1tc (v25)
         if context.cardarea == G.jokers and context.joker_main  then
             if #G.jokers.cards == 1 then
                 return {
-                    Xmult = card.ability.extra.mult
+                    e_mult = card.ability.extra.mult
                 }
             end
         end

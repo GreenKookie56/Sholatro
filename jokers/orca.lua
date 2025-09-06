@@ -49,11 +49,11 @@ SMODS.Joker{ --Orca (v36.0-36.1)
         end
         if context.individual and context.cardarea == G.play  then
             if (card.ability.extra.dead or 0) == 0 then
-                if SMODS.pseudorandom_probability(card, 'group_0_c10bcebc', 1, card.ability.extra.odds, 'j_sholatro_orca') then
-                      card.ability.extra.dead = 1
+                if SMODS.pseudorandom_probability(card, 'group_0_c10bcebc', 1, card.ability.extra.odds, 'j_sholatro_orca', false) then
+              card.ability.extra.dead = 1
                         card.ability.extra.mult = card.ability.extra.patch
                         card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Patched!", colour = G.C.BLUE})
-                  end
+          end
             end
         end
     end

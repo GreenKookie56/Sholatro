@@ -2,7 +2,7 @@ SMODS.Joker{ --Overclock
     key = "overclock",
     config = {
         extra = {
-            money÷10 = 1,
+            currentmoney = 0,
             ignore = 0
         }
     },
@@ -11,8 +11,7 @@ SMODS.Joker{ --Overclock
         ['text'] = {
             [1] = 'Create a {C:dark_edition}Negative{} {C:attention}Boss Farming Guide{}',
             [2] = 'when {C:green}shop{} is rerolled',
-            [3] = '{X:legendary,C:white}^1{} Mult for every {C:money}$10{} owned',
-            [4] = '{C:inactive}(Currently {}{X:legendary,C:white}^#2#{} {C:inactive}Mult){}'
+            [3] = '{X:legendary,C:white}^1{} Mult for every {C:money}${} owned'
         },
         ['unlock'] = {
             [1] = ''
@@ -26,18 +25,14 @@ SMODS.Joker{ --Overclock
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 50,
-    rarity = "sholatro_the_expert",
+    cost = 17,
+    rarity = "sholatro_the_pro",
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-
-    loc_vars = function(self, info_queue, card)
-        return {vars = {card.ability.extra.ignore, card.ability.extra.money÷10 + ((math.floor(lenient_bignum(G.GAME.dollars / 10)) or 0))}}
-    end,
 
     calculate = function(self, card, context)
         if context.reroll_shop  then
@@ -63,9 +58,9 @@ SMODS.Joker{ --Overclock
         end
                 }
         end
-        if context.cardarea == G.jokers and context.joker_main  then
+        if context.cardarea == G.jokers and context.joker_main and lenient_bignum(G.GAME.dollars) <= 1 then
                 return {
-                    e_mult = card.ability.extra.money÷10 + (math.floor(lenient_bignum(G.GAME.dollars / 10)))
+                    e_mult = lenient_bignum(G.GAME.dollars)
                 }
         end
     end

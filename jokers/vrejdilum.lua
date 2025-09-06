@@ -2,18 +2,18 @@ SMODS.Joker{ --Vrejdilum
     key = "vrejdilum",
     config = {
         extra = {
-            chips = 7440
+            echips = 748
         }
     },
     loc_txt = {
         ['name'] = 'Vrejdilum',
         ['text'] = {
-            [1] = 'This Joker gives {C:blue}+10{} Chips',
+            [1] = 'This Joker gives {X:planet,C:white}^1{} Chips',
             [2] = 'for every message',
             [3] = 'that contains \"{C:attention}vrej{}\" in',
             [4] = '{C:attention}Puddles of Pudding{} server',
-            [5] = '{C:inactive}latest update: August 24th 2025{}',
-            [6] = '(Currently {C:blue}+7440{} Chips)'
+            [5] = '{C:inactive}latest update: Sep 6 2025{}',
+            [6] = '(Currently {X:planet,C:white}^748{} Chips)'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -39,7 +39,7 @@ SMODS.Joker{ --Vrejdilum
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
                 return {
-                    chips = card.ability.extra.chips
+                    e_chips = card.ability.extra.echips
                 }
         end
     end

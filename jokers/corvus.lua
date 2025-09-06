@@ -3,14 +3,13 @@ SMODS.Joker{ --Corvus (v40)
     config = {
         extra = {
             Remaining = 2,
-            chips = 8000,
-            Spectral = 0
+            chips = 8000
         }
     },
     loc_txt = {
         ['name'] = 'Corvus (v40)',
         ['text'] = {
-            [1] = '{C:blue}+#2#{} Chips and',
+            [1] = '{X:planet,C:white}^#2#{} Chips and',
             [2] = 'create an {C:spectral}Immolate{}',
             [3] = 'every {C:attention}3{} played hands',
             [4] = '{C:inactive}#1# remaining{}'
@@ -61,7 +60,7 @@ SMODS.Joker{ --Corvus (v40)
                 end
                 card.ability.extra.Remaining = 2
                 return {
-                    chips = card.ability.extra.chips,
+                    e_chips = card.ability.extra.chips,
                     extra = {
                         message = created_consumable and localize('k_plus_spectral') or nil,
                         colour = G.C.SECONDARY_SET.Spectral

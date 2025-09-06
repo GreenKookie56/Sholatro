@@ -2,7 +2,7 @@ SMODS.Joker{ --Cave Monkey
     key = "cavemonkey",
     config = {
         extra = {
-            xchips = 50
+            echips = 50
         }
     },
     loc_txt = {
@@ -62,7 +62,7 @@ SMODS.Joker{ --Cave Monkey
         if context.individual and context.cardarea == G.play  then
             if SMODS.get_enhancements(context.other_card)["m_stone"] == true then
                 return {
-                    x_chips = card.ability.extra.xchips
+                    e_chips = card.ability.extra.echips
                 }
             end
         end
