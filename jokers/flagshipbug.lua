@@ -2,6 +2,7 @@ SMODS.Joker{ --Flagship bug
     key = "flagshipbug",
     config = {
         extra = {
+            repetitions = 3
         }
     },
     loc_txt = {
@@ -29,5 +30,33 @@ SMODS.Joker{ --Flagship bug
     perishable_compat = true,
     unlocked = true,
     discovered = true,
-    atlas = 'CustomJokers'
+    atlas = 'CustomJokers',
+
+    calculate = function(self, card, context)
+        if context.setting_blind  then
+            if true then
+                for i = 1, card.ability.extra.repetitions do
+              SMODS.calculate_effect({func = function()
+            local created_joker = true
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    local joker_card = SMODS.add_card({ set = 'Joker', key = 'j_sholatro_flagshipplane' })
+                    if joker_card then
+                        joker_card:set_edition("e_negative", true)
+                        
+                    end
+                    
+                    return true
+                end
+            }))
+            
+            if created_joker then
+                card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.BLUE})
+            end
+            return true
+        end}, card)
+          end
+            end
+        end
+    end
 }
