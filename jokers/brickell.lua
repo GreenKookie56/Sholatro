@@ -43,7 +43,7 @@ SMODS.Joker{ --v18 strategies
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
                 return {
-                    Xmult = card.ability.extra.Mult
+                    e_mult = card.ability.extra.Mult
                 }
         end
         if context.reroll_shop  then
