@@ -58,7 +58,7 @@ SMODS.Joker{ --The Fungus
     loc_vars = function(self, q, card)
         return {
             vars = {
-                {FormatArrowMult(card.ability.extra.operator, 5)
+                FormatArrowMult(card.ability.extra.operator, 5)
             }
         }
     end,
