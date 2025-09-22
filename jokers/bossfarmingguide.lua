@@ -11,7 +11,7 @@ SMODS.Joker{ --Boss Farming Guide
         ['name'] = 'Boss Farming Guide',
         ['text'] = {
             [1] = 'Earn {C:gold}$#1#{} at the end of round',
-            [2] = 'Payout increases by {C:gold}$2{} for every {C:gold}$5{}',
+            [2] = 'Payout increases by {C:gold}$1{} for every {C:gold}$5{}',
             [3] = 'you have at the end of round'
         },
         ['unlock'] = {
@@ -43,7 +43,7 @@ SMODS.Joker{ --Boss Farming Guide
         if context.end_of_round and context.game_over == false and context.main_eval  then
                 return {
                     func = function()
-                    card.ability.extra.eor = (card.ability.extra.eor) + (math.floor(lenient_bignum(G.GAME.dollars / 5))) * 2
+                    card.ability.extra.eor = (card.ability.extra.eor) + (math.floor(lenient_bignum(G.GAME.dollars / 5)))
                     return true
                 end,
                     message = "Farming!",
