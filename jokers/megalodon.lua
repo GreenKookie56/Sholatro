@@ -2,7 +2,7 @@ SMODS.Joker{ --Megalodon (v46-48)
     key = "megalodon",
     config = {
         extra = {
-            mult = 7
+            mult = 70
         }
     },
     loc_txt = {
