@@ -1,18 +1,4 @@
-SMODS.Rarity {
-    key = "the_pro",
-    pools = {
-        ["Joker"] = true
-    },
-    default_weight = 0.007,
-    badge_colour = HEX('ff9500'),
-    loc_txt = {
-        name = "The Pro"
-    },
-    get_weight = function(self, weight, object_type)
-        return weight
-    end,
-}
-
+if Talisman then
 SMODS.Rarity {
     key = "the_expert",
     pools = {
@@ -21,39 +7,12 @@ SMODS.Rarity {
     default_weight = 0.001,
     badge_colour = HEX('609621'),
     loc_txt = {
-        name = "The Expert"
+      ['default'] = {
+            name = "The Expert"
+        },
     },
     get_weight = function(self, weight, object_type)
         return weight
     end,
 }
-
-SMODS.Rarity {
-    key = "_rare",
-    pools = {
-        ["Joker"] = true
-    },
-    default_weight = 0.001,
-    badge_colour = HEX('ff4936'),
-    loc_txt = {
-        name = " rare"
-    },
-    get_weight = function(self, weight, object_type)
-        return weight
-    end,
-}
-
-SMODS.Rarity {
-    key = "subtower",
-    pools = {
-        ["Joker"] = true
-    },
-    default_weight = 0,
-    badge_colour = HEX('6A7A8B'),
-    loc_txt = {
-        name = "subtower"
-    },
-    get_weight = function(self, weight, object_type)
-        return weight
-    end,
-}
+end
