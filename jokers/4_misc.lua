@@ -250,12 +250,22 @@ SMODS.Joker{ --Sheppi
                 return {
                     x_chips = chips_value,
                     extra = {
-                        message = "Upgrade!",
+                        message = localize('k_upgrade_ex'),
                         colour = G.C.GREEN
                         }
                 }
             end
         end
+		if context.forcetrigger then
+			card.ability.extra.chips = (card.ability.extra.chips) + card.ability.extra.chipscale
+			return {
+                x_chips = card.ability.extra.chips,
+                extra = {
+                    message = localize('k_upgrade_ex'),
+                    colour = G.C.GREEN
+                }
+			}
+		end
     end
 }
 SMODS.Joker{ --Shiniest award (v38)
