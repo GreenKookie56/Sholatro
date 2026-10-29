@@ -1242,11 +1242,17 @@ SMODS.Joker{ --tb1 faster firing
                 }
             end
         end
-        if context.cardarea == G.jokers and context.joker_main or context.forcetrigger then
+        if context.cardarea == G.jokers and context.joker_main then
                 return {
                     x_chips = card.ability.extra.scoring
                 }
         end
+		if context.forcetrigger then
+				card.ability.extra.scoring = (card.ability.extra.scoring) + 0.4
+                return {
+                    x_chips = card.ability.extra.scoring
+                }
+		end
         if context.end_of_round and context.main_eval and G.GAME.blind.boss and not context.blueprint then
             return {
                 func = function()
@@ -1327,11 +1333,17 @@ SMODS.Joker{ --tb1 burny stuff
                 }
             end
         end
-        if context.cardarea == G.jokers and context.joker_main or context.forcetrigger then
+        if context.cardarea == G.jokers and context.joker_main then
                 return {
                     Xmult = card.ability.extra.scoring
                 }
         end
+		if context.forcetrigger then
+				card.ability.extra.scoring = (card.ability.extra.scoring) + 1.5
+                return {
+                    Xmult = card.ability.extra.scoring
+                }
+		end
         if context.end_of_round and context.main_eval and G.GAME.blind.boss and not context.blueprint then
             return {
                 func = function()
@@ -1560,11 +1572,9 @@ SMODS.Joker{ --tt5
             if left_joker and context.other_card == left_joker then
 			    for i = 1, #G.jokers.cards do
 				    if G.jokers.cards[i] == card then
-					    if Cryptid.demicolonGetTriggerable(G.jokers.cards[i + 1])[1] then
-						    local results = Cryptid.forcetrigger(G.jokers.cards[i + 1], context)
-						    if results and results.jokers then
-							    return results.jokers
-						    end
+						local results = Cryptid.forcetrigger(G.jokers.cards[i + 1], context)
+						if results and results.jokers then
+							return results.jokers
 						end
 					end
 				end
